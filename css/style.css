@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box; }
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  overflow: hidden; }
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 4rem; }
+  .container .card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    cursor: pointer; }
+    .container .card .face {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+      .container .card .face.face1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.4);
+        transform-origin: bottom;
+        transition: all .4s ease-in-out; }
+        .container .card .face.face1 img {
+          max-width: 100px; }
+        .container .card .face.face1 h2 {
+          font-size: 2rem;
+          text-align: center;
+          margin-top: 10px; }
+      .container .card .face.face2 {
+        text-align: center;
+        background-color: #fff;
+        font-size: 1.2rem;
+        padding: .8rem 0;
+        transform-origin: top;
+        transform: translateY(100%) rotateX(90deg);
+        transition: all .4s ease-in-out; }
+        .container .card .face.face2 p {
+          margin: 10px 0 24px; }
+        .container .card .face.face2 a {
+          width: 200px;
+          padding: 12px;
+          color: #fff;
+          background-color: #222;
+          text-decoration: none;
+          text-transform: capitalize; }
+    .container .card:hover .face1 {
+      background-color: #ff0057;
+      transform: translateY(-100%) rotateX(90deg); }
+    .container .card:hover .face2 {
+      transform: translateY(0) rotateX(0); }
+
+@media screen and (max-width: 1200px) {
+  .card {
+    margin-bottom: 20px; }
+
+  .container {
+    padding: 0 0 0 2rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr); } }
+@media screen and (max-width: 1000px) {
+  .card:not(:last-child) {
+    margin-bottom: 20px; }
+
+  .container {
+    padding: 1rem 0 0 5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr); } }
+
+/*# sourceMappingURL=style.css.map */
